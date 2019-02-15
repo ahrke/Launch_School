@@ -1,0 +1,29 @@
+en:
+  welcome: "Welcome to calculator!"
+  first_number: "What is the first number?"
+  second_number: "What is the second number?"
+  invalid_value: "That's an incorrect number, idiot! Try again"
+  operation_prompt: "What is your desired operation?\n
+         1) add \n
+         2) subtract \n
+         3) multiply \n
+         4) divide"
+  invalid_op: "Incorrect opertion, please try again\n"
+  result_is: "The result is "
+  again: "Would you like to calculate again? (Y to start again)"
+  thank_you: "Thank you for using our calculator! =)"
+  
+fr:
+  welcome: "Bienvenue sur la calculatrice!"
+  first_number: "Quel est le premier numéro?"
+  second_number: "Quel est le deuxième numéro?"
+  invalid_value: "C'est un numéro incorrect, idiot! Réessayer"
+  operation_prompt: "Quelle est votre opération souhaitée? \n
+         1) une addition \n
+         2) soustraire \n
+         3) multiplier \n
+         4) diviser"
+  invalid_op: "Opération incorrecte, veuillez réessayer \n"
+  result_is: "Le résultat est "
+  again: "Voulez-vous calculer à nouveau? (Y pour recommencer)"
+  thank_you: "Merci d'utiliser notre calculatrice! =)"
