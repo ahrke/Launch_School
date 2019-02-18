@@ -3,6 +3,10 @@ require "yaml"
 MESSAGES = YAML.load_file('calculator_messages.yml')
 LANGUAGE = 'fr'
 
+def messages(message)
+  MESSAGES[LANGUAGE][message]
+end
+
 def prompt(message)
   Kernel.puts("=> #{message}")
 end
@@ -14,32 +18,32 @@ end
 num1 = 0
 num2 = 0
 
-prompt(MESSAGES[LANGUAGE]['welcome'])
+prompt(messages('welcome'))
 
 loop do
   loop do
-    prompt(MESSAGES[LANGUAGE]['first_number'])
+    prompt(messages('first_number'))
     num1 = Kernel.gets().chomp().to_i
 
     if valid_number?(num1)
       break
     else
-      prompt(MESSAGES[LANGUAGE]['invalid_value'])
+      prompt(messages('invalid_value'))
     end
   end
 
   loop do
-    prompt(MESSAGES[LANGUAGE]['second_number'])
+    prompt(messages('second_number'))
     num2 = Kernel.gets().chomp().to_i
 
     if valid_number?(num2)
       break
     else
-      prompt(MESSAGES[LANGUAGE]['invalid_value'])
+      prompt(messages('invalid_value'))
     end
   end
 
-  prompt(MESSAGES[LANGUAGE]['operation_prompt'])
+  prompt(messages('operation_prompt'))
   operator = 0
   loop do
     operator = Kernel.gets().chomp()
@@ -47,7 +51,7 @@ loop do
     if %w(1 2 3 4).include?(operator)
       break
     else
-      prompt("#{MESSAGES[LANGUAGE]['invalid_op']} #{MESSAGES[LANGUAGE]['operation_prompt']}")
+      prompt("#{messages('invalid_op')} #{messages('operation_prompt')}")
     end
   end
 
@@ -62,11 +66,11 @@ loop do
               num1.to_i / num2.to_i
             end
 
-  prompt("#{MESSAGES[LANGUAGE]['result_is']} #{result}")
+  prompt("#{messages('result_is')} #{result}")
 
-  prompt(MESSAGES[LANGUAGE]['again'])
+  prompt(messages('again'))
   again = Kernel.gets().chomp().downcase()
   break unless again.start_with?('y')
 end
 
-prompt(MESSAGES[LANGUAGE]['thank_you'])
+prompt(messages('thank_you'))
