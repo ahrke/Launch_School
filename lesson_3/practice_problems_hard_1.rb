@@ -120,3 +120,14 @@ p dot_separated_ip_address?("192.168.244")
 p dot_separated_ip_address?("192.168.0.1.10")
 p dot_separated_ip_address?("192.168.0.309")
 p dot_separated_ip_address?("0.68.0.1")
+
+# random exercise from lesson 4
+# Problem: given an array of numbers, and a number, return an array containing
+# a collection of the original numbers, multiplied by the second argument
+my_numbers = [1, 4, 3, 7, 2, 6]
+
+def multiply(numbers, multiplier)
+  numbers.map { |number| number *= multiplier }
+end
+
+p multiply(my_numbers, 3) # => [3, 12, 9, 21, 6, 18]
